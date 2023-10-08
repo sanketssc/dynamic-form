@@ -1,0 +1,225 @@
+#root {
+  max-width: 1280px;
+  margin: auto;
+  padding: 2rem;
+  width: 100%;
+  height: 100%;
+  max-height: 100vh;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+.button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+.button:hover {
+  border-color: #646cff;
+}
+.button:focus,
+.button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  .button {
+    background-color: #e7e7e7;
+  }
+}
+
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  gap: 2rem;
+}
+
+.head {
+  display: flex;
+  justify-content: space-around;
+  width: 80%;
+}
+.head > label,
+.head > button,
+.head > select {
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+form {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 2rem;
+  height: 100%;
+  margin: auto;
+  gap: 1rem;
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
+form > div {
+  display: flex;
+  width: 80%;
+  justify-content: space-between;
+  padding: 1rem;
+  border: 1px solid #e7e7e7;
+  border-radius: 0.5rem;
+}
+
+@media (prefers-color-scheme: light) {
+  form > div {
+    border: 1px solid #838383;
+  }
+}
+
+form > div > label {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+@media screen and (max-width: 500px) {
+  form > div > label {
+    flex-direction: column;
+  }
+}
+
+input[type="text"],
+input[type="number"],
+input[type="email"],
+input[type="password"],
+select,
+textarea {
+  outline: none;
+  padding: 0.5rem;
+  border: 1px solid #838383;
+  border-radius: 0.3rem;
+  font-size: 1rem;
+}
+
+.options {
+  display: flex;
+  flex-wrap: wrap;
+  height: 100%;
+  margin: auto;
+  gap: 1rem;
+}
+
+.options > label {
+  width: 40%;
+  display: flex;
+}
+
+label > div,
+label > input,
+label > select,
+label > textarea {
+  align-self: center;
+  width: 50%;
+}
+
+label > div {
+  text-align: center;
+}
+textarea {
+  height: 5rem;
+}
+
+form > div > div {
+  width: 50%;
+  text-align: center;
+}
+
+.select-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.select-form > div {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+@media screen and (max-width: 500px) {
+  .select-form > div {
+    flex-direction: column;
+  }
+}
+.select-form > div > input {
+  width: 60%;
+  display: flex;
+}
+
+.remove-btn:hover {
+  background-color: red;
+  border: 1px solid red;
+}
+
+.select-form > button {
+  width: 80%;
+  margin: auto;
+}
+
+.error {
+  color: red;
+  display: flex;
+  justify-content: center;
+}
