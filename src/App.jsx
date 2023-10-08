@@ -42,8 +42,6 @@ function App() {
     form.forEach((ff, idx) => {
       if (idx === 0) return;
       if (ff.isRequired) {
-        console.log(ff);
-        console.log(submissionForm[idx - 1][ff.fieldName].length);
         if (submissionForm[idx - 1][ff.fieldName].length === 0) {
           setError(`${ff.fieldName} is Required`);
           v = true;
@@ -51,10 +49,8 @@ function App() {
         }
       }
     });
-    console.log(error);
     if (v) return;
     setSubmitState("Form submitted successfully");
-    console.log(submissionForm);
     clearSubmissionForm();
     form.forEach((ff, idx) => {
       if (idx === 0) return;
@@ -74,11 +70,8 @@ function App() {
     setTimeout(() => {
       setSubmitState("");
     }, 5000);
-
-    console.log(submissionForm);
   };
 
-  console.log(form);
   return (
     <div className="home">
       {/* {JSON.stringify(form)} */}
@@ -97,7 +90,6 @@ function App() {
               const fileReader = new FileReader();
               fileReader.onload = async (event) => {
                 const res = JSON.parse(event.target.result);
-                console.log(res);
                 if (Array.isArray(res)) {
                   if (res[0]["x-identifier"] === "Dynamic-form") {
                     res.forEach((ff, idx) => {
@@ -130,7 +122,6 @@ function App() {
         {submitState && <h3 className="success">{submitState}</h3>}
         <h2>Form</h2>
         {form.map((ff, idx) => {
-          // console.log(ff);
           if (idx === 0) return <React.Fragment key="-1"></React.Fragment>;
           return (
             <div key={idx}>
@@ -231,7 +222,6 @@ function App() {
                             }
                             onChange={(e) => {
                               const tmp = submissionForm;
-                              console.log(tmp[idx - 1], opt);
 
                               if (e.target.checked) {
                                 tmp[idx - 1][ff.fieldName] = opt;
@@ -273,7 +263,6 @@ function App() {
                             ].includes(opt)}
                             onChange={(e) => {
                               const tmp = submissionForm;
-                              console.log(tmp[idx - 1]);
                               if (e.target.checked) {
                                 tmp[idx - 1][ff.fieldName].push(opt);
                               } else {
@@ -297,21 +286,17 @@ function App() {
                 onClick={() => {
                   const tmp = form.filter((val, ind) => {
                     if (ind === idx) {
-                      console.log(val, ind, idx);
                       return false;
                     }
                     return true;
                   });
                   const tmp2 = submissionForm.filter((val, ind) => {
                     if (ind === idx - 1) {
-                      console.log(val, ind, idx);
                       return false;
                     }
                     return true;
                   });
-                  console.log(tmp2);
                   setFreshSubmissionForm(tmp2);
-                  console.log(tmp);
                   setFreshForm(tmp);
                 }}
               >
